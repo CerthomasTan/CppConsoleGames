@@ -10,18 +10,34 @@ int main() {
 
 
 	//declare 3 number code
-	const int a = 4;
-	const int b = 3;
-	const int c = 2;
+	const int CodeA = 4;
+	const int CodeB = 3;
+	const int CodeC = 2;
 
 	//gives the hint to player for the puzzle
-	const int sum = a + b + c;
-	const int product = a * b * c;
+	const int CodeSum = CodeA + CodeB + CodeC;
+	const int CodeProduct = CodeA * CodeB * CodeC;
 
 	//print the sum and product to terminal
 	std::cout << std::endl << std::endl;
 	std::cout << "There are 3 numbers in the code" << std::endl;
-	std::cout << "The sum of the 3 numbers are:" << sum << std::endl;
-	std::cout << "The numbers multiple to give:" << product << std::endl;
+	std::cout << "The sum of the 3 numbers are:" << CodeSum << std::endl;
+	std::cout << "The numbers multiple to give:" << CodeProduct << std::endl;
+
+	std::cout << "Enter a Guess";
+	std::cout << std::endl;
+	int GuessA, GuessB, GuessC;
+	std::cin >> GuessA;
+	std::cin >> GuessB;
+	std::cin >> GuessC;
+	int GuessSum, GuessProduct;
+	GuessSum = GuessA + GuessB + GuessC;
+	GuessProduct = GuessA * GuessB * GuessC;
+	std::cout << "You entered: " << GuessA << GuessB << GuessC << std::endl;
+	std::cout << "Sum of numbers: " << GuessSum << std::endl;
+	std::cout << "Multipling numbers: " << GuessProduct << std::endl;
+
+
+
 	return 0;
 }
