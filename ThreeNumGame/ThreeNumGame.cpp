@@ -1,13 +1,15 @@
 #include <iostream>
 
-int main() {
+void PrintIntroduction() {
 	//prints the introduction
-	std::cout << "You are a rebel spy and have entered the enemy's secret garrison.";
-	std::cout << std::endl;
-	std::cout << "You are on floor 0. A 3 combination lock is on the door.";
-	std::cout << std::endl;
-	std::cout << "You'll need to enter the correct code to continue...";
+	std::cout << "You are a rebel spy and have entered the enemy's secret garrison.\n";
+	std::cout << "You are on floor 0. A 3 combination lock is on the door.\n";
+	std::cout << "You'll need to enter the correct code to continue...\n";
+}
 
+void PlayGame() {
+
+	PrintIntroduction();
 
 	//declare 3 number code
 	const int CodeA = 4;
@@ -24,20 +26,26 @@ int main() {
 	std::cout << "The sum of the 3 numbers are:" << CodeSum << std::endl;
 	std::cout << "The numbers multiple to give:" << CodeProduct << std::endl;
 
-	std::cout << "Enter a Guess";
-	std::cout << std::endl;
+	//store player guess
+	std::cout << "Enter a Guess\n";
 	int GuessA, GuessB, GuessC;
-	std::cin >> GuessA;
-	std::cin >> GuessB;
-	std::cin >> GuessC;
-	int GuessSum, GuessProduct;
-	GuessSum = GuessA + GuessB + GuessC;
-	GuessProduct = GuessA * GuessB * GuessC;
-	std::cout << "You entered: " << GuessA << GuessB << GuessC << std::endl;
-	std::cout << "Sum of numbers: " << GuessSum << std::endl;
-	std::cout << "Multipling numbers: " << GuessProduct << std::endl;
+	std::cin >> GuessA >> GuessB >> GuessC;
+	int GuessSum = GuessA + GuessB + GuessC;
+	int GuessProduct = GuessA * GuessB * GuessC;
 
+	//check if player wins if sum and product match. 
+	if (GuessSum == CodeSum && GuessProduct == CodeProduct) {
+		std::cout << "You win\n";
+	}
+	else
+	{
+		std::cout << "You entered in the wrong code, gaurds are coming. You lose\n";
+	}
+	return;
+}
 
-
+int main() {
+	
+	PlayGame();
 	return 0;
 }
